@@ -14,8 +14,8 @@
 //Protection Unit calls, wrappers, go here.
 #include "pu.h"
 
-#include "..\main.h"
-#include "..\opcodes.h"
+#include "../main.h"
+#include "../opcodes.h"
 
 /* exception vector abort handlers
 arm variables		status
@@ -142,7 +142,7 @@ return (oldvec);
 /*
 unsigned Install_Handler (unsigned *location, unsigned *vector)
  Updates contents of 'vector' to contain LDR pc, [pc, #offset] 
- instruction to cause long branch to address in ‘location’. 
+ instruction to cause long branch to address in â€˜locationâ€™. 
  Function return value is original contents of 'vector'.
 { unsigned vec, oldvec;
 vec = ((unsigned)location - (unsigned)vector-0x8) | 0xe59ff000 //ldr pc,arm register method
@@ -156,7 +156,7 @@ return (oldvec);
 //exception handler address, exception vectors
 unsigned Install_Handler (u32 * location, u32 *vector){
 // Updates contents of 'vector' to contain LDR pc, [pc, #offset] 
-// instruction to cause long branch to address in ‘location’. 
+// instruction to cause long branch to address in â€˜locationâ€™. 
 // Function return value is original contents of 'vector'.
 
 u32 vec, oldvec;
@@ -254,7 +254,7 @@ return 0;
 
 //swi abort part
 u32 exceptswi (u32 swiaddress){
-//iprintf("[swi: %x] \n",(unsigned int)swiaddress); //sorry, swi code can¡t handle printf overflows?!!
+//iprintf("[swi: %x] \n",(unsigned int)swiaddress); //sorry, swi code canÂ¡t handle printf overflows?!!
 //while(1);
 //iprintf("swi ctm \n");
 	if (swiaddress == 0x0){
